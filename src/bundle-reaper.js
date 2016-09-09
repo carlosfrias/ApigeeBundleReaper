@@ -54,6 +54,7 @@ if(typeof program.undeployUnused === "undefined" || program.undeployUnused === t
   flag = false;
 }
 /*if(typeof program.deleteUndeployed === "undefined" || program.deleteUndeployed === true || !(program.deleteUndeployed == "yes" || program.deleteUndeployed =="no")){
+<<<<<<< Updated upstream
   console.log(colors.red("Please provide yes or no for deleting undeployed APIs"));
   flag = false;
 }*/
@@ -62,20 +63,19 @@ if(!flag){
 }
 
 proxyStatus.exportAPITrafficStatus({
-    host: program.host, //api.enterprise.apigee.com
-    org:  program.organization, //saisarantest
-    auth: program.authorization, //"Basic <auth>",
-    env:  program.environment, //all|<valid env>
-    axDays: program.axDays, //90
-    undeployUnused: program.undeployUnused
+    host: "api.enterprise.apigee.com",
+    org: "org_name_here",
+    auth: "Basic gooble_de_gook_here",
+    env: "all", //all|<valid env>
+    axDays: 30,
+    undeployUnused: "yes"
 });
 
-
 proxyStatus.exportAPIDeploymentStatus({
-    host: program.host, //api.enterprise.apigee.com
-    org:  program.organization, //saisarantest
-    auth: program.authorization, //"Basic <auth>",
-    env:  program.environment, //all
+    host: "api.enterprise.apigee.com",
+    org: "org_name_here",
+    auth: "Basic gooble_de_gook_here=",
+    env: "all",
     deleteUndeployed: "no" //program.deleteUndeployed
 });
 
